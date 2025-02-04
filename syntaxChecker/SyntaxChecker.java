@@ -1,4 +1,5 @@
 // Syntax Checker class
+package syntaxChecker;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -57,12 +58,12 @@ public class SyntaxChecker{
                   case 0:
                     {
                         if(!(token.equals("int") || token.equals("char") || token.equals("float") || token.equals("double"))){
-                            System.out.println("case 0");
+                            //System.out.println("case 0");
                             status = false;
                             break;
                         }
                     //set status temporarily as true
-                    System.out.println("valid data type");
+                    //System.out.println("valid data type");
                     dataType = token;
                     status = true;
                     ++state;
@@ -74,12 +75,12 @@ public class SyntaxChecker{
                   case 1:
                     {
                         if(!(token.charAt(0) == '_' || (token.charAt(0) >= 'a' && token.charAt(0) <= 'z')) || (token.equals("int") || token.equals("char") || token.equals("float") || token.equals("double"))){
-                            System.out.println("case 1");
+                            //System.out.println("case 1");
                             status = false;
                             //break;
                         }
                         else{
-                            System.out.println("valid variable name");
+                            //System.out.println("valid variable name");
                             status = true;
                             ++state;
                         }
@@ -118,7 +119,7 @@ public class SyntaxChecker{
                                      status = true;
                                  } 
                                  catch(NumberFormatException e){
-                                     System.out.println("dataType int");
+                                     //System.out.println("dataType int");
                                      status = false;
                                      break;
                                  }
@@ -129,7 +130,7 @@ public class SyntaxChecker{
                             case "char":
                               {
                                  if(token.length() > 1){
-                                     System.out.println("dataType char");
+                                     //System.out.println("dataType char");
                                      status = false;
                                  }
                                  status = true;
@@ -144,7 +145,7 @@ public class SyntaxChecker{
                                     status = true;
                                  } 
                                  catch(NumberFormatException e){
-                                     System.out.println("dataType float");
+                                     //System.out.println("dataType float");
                                      status = false;
                                  }
                              
@@ -158,7 +159,7 @@ public class SyntaxChecker{
                                      status = true;
                                  }
                                  catch(NumberFormatException e){
-                                     System.out.println("dataType double");
+                                     //System.out.println("dataType double");
                                      status = false;
                                  }
                              
