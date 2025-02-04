@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class SyntaxChecker{
+    //attributes
     private String input;
     private boolean status;
     private String dataType;
@@ -12,7 +13,7 @@ public class SyntaxChecker{
     //constructor
     public SyntaxChecker(String st){
        input = st;
-       status = true;
+       status = false;
        dataType = "";
        tokens = new ArrayList<String>();
        tokenizeString();
@@ -40,7 +41,7 @@ public class SyntaxChecker{
         }
     }
 
-    //syntax checking / main syntax checker method
+    // main syntax checker method
     private void checkSyntax(){
         int state = 0;
         for(int i = 0; i < tokens.size(); i++){
